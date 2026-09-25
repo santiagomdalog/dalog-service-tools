@@ -2,7 +2,7 @@
   "name": "DALOG Service Tools",
   "short_name": "DALOG Tools",
   "description": "D850 profiles, DAWI sensors, gateways and plant sheets, on site.",
-  "start_url": "./#form",
+  "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "background_color": "#1e262d",
