@@ -55,17 +55,7 @@
   .tool-card:hover .go, .tool-card:focus-visible .go { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
   .foot { font-family: var(--mono); font-size: 0.72rem; letter-spacing: .06em; color: var(--text-muted); margin: 6px 0 0; }
 
-  /* ---- "How to use" row + guide */
-  .guide-link { display: grid; grid-template-columns: 52px minmax(0, 1fr) auto; align-items: center; gap: 8px 22px; padding: 16px 20px;
-                color: inherit; text-decoration: none; border: 1.5px dashed var(--text-muted); border-radius: var(--radius); background: transparent; }
-  .guide-link:hover { border-color: var(--text); border-style: solid; }
-  .guide-link .icon { width: 52px; height: 52px; border-radius: var(--radius); display: flex; align-items: center; justify-content: center;
-                      background: var(--accent); color: var(--on-accent); font-family: var(--display); font-weight: 700; font-size: 1.9rem; }
-  .gl-text b { font-family: var(--display); font-size: 1.45rem; text-transform: uppercase; letter-spacing: .02em; }
-  .gl-es { font-family: var(--display); font-size: 1.1rem; color: var(--text-muted); text-transform: uppercase; }
-  .gl-text small { display: block; color: var(--text-muted); font-size: 0.92rem; margin-top: 4px; }
-  .guide-link:hover .go, .guide-link:focus-visible .go { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
-
+  /* ---- "How to use" guide (its menu card is a normal .tool-card) */
   .lang { margin-left: auto; display: flex; flex: none; border: 1px solid var(--steel-muted); border-radius: var(--radius); overflow: hidden; }
   .lang button { font-family: var(--display); font-weight: 700; font-size: 0.95rem; letter-spacing: .08em; background: none; color: var(--on-steel);
                  border: 0; padding: 5px 12px; cursor: pointer; min-height: 34px; }
@@ -93,9 +83,6 @@
   .problems .msg { font-family: var(--mono); font-size: 0.8rem; color: var(--warning); }
 
   @media (max-width: 760px) {
-    .guide-link { grid-template-columns: 44px minmax(0, 1fr); padding: 16px; }
-    .guide-link .icon { width: 44px; height: 44px; }
-    .guide-link .go { grid-column: 1 / -1; justify-content: center; }
     .tool-card { grid-template-columns: 44px minmax(0, 1fr); padding: 16px; }
     .tool-card .icon { width: 44px; height: 44px; }
     .tc-meta { grid-column: 1 / -1; }
@@ -299,14 +286,22 @@
         </span>
         <span class="go">Open <span aria-hidden="true">↗</span></span>
       </a>
+      <!-- Tutorial (Santiago, 2026-09-25): short steps, EN | ES. Same card as
+           the tools ("why is it different than the others?"); no data-tool:
+           its href opens the guide. -->
+      <a class="tool-card" id="guide-link" href="#guide">
+        <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.6 9.3a2.5 2.5 0 1 1 3.4 2.4c-.6.3-1 .8-1 1.5v.6"/><path d="M12 16.9v.2"/></svg></span>
+        <span class="tc-main">
+          <h2>How to use · Cómo usar</h2>
+          <p>Step by step: install the app on the phone, work without signal, and every tool.</p>
+        </span>
+        <span class="tc-meta">
+          <span class="flow">Install → Before site → Sensors, Gateways, Photos → No signal</span>
+          <span class="tags"><span class="tag">English / Español</span><span class="tag">Short steps</span></span>
+        </span>
+        <span class="go">Open <span aria-hidden="true">→</span></span>
+      </a>
     </div>
-    <!-- Tutorial (Santiago, 2026-09-25): short steps, EN | ES. Not a tool-card. -->
-    <a class="guide-link" href="#guide" id="guide-link">
-      <span class="icon" aria-hidden="true">?</span>
-      <span class="gl-text"><b>How to use</b> <span class="gl-es">· Cómo usar</span>
-        <small>Install on the phone, work without signal, every tool step by step.</small></span>
-      <span class="go">Open <span aria-hidden="true">→</span></span>
-    </a>
   </main>
 </div>
 
